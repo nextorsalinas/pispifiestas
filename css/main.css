@@ -1,0 +1,148 @@
+/* Aplicar estilos globales a todos los elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Estilos para el encabezado */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    margin-top: 45px;
+}
+
+/* Estilos para el anuncio superior */
+.anuncio {
+    background-color: #00BAB0; /* Color de fondo del anuncio */
+    color: #ffffff; /* Color del texto */
+    padding: 10px 20px; /* Espacio alrededor del texto */
+    text-align: center; /* Centra el texto dentro del anuncio */
+    position: fixed; /* Fija el anuncio en la parte superior de la página */
+    top: 0;
+    left: 0;
+    width: 100%; /* Ancho completo de la página */
+    font-size: 18px;
+}
+
+/* Estilo para el logo */
+.logo {
+    max-width: 20rem;
+    flex-shrink: 0; /* Evita que el logo se reduzca */
+    margin-right: auto; /* Mueve el logo a la izquierda */
+}
+
+/* Estilo para el botón "Agenda tu evento" */
+.agenda-evento {
+    display: block;
+    background-color: #ea0743; /* Color de fondo del botón */
+    color: #fff; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px 15px; /* Espaciado interno */
+    font-size: 1rem; /* Tamaño de la fuente */
+    cursor: pointer; /* Cursor de puntero */
+    transition: background-color 0.3s; /* Transición suave para el color de fondo */
+}
+
+/* Efecto de hover para el botón "Agenda tu evento" */
+.agenda-evento:hover {
+    background-color: #a30f0f; /* Color de fondo al pasar el ratón */
+}
+
+/* Estilos para la lista de navegación */
+.nav-list {
+    list-style-type: none;
+    font-size: large;
+    display: flex;
+    gap: 2rem;
+    margin: 0 auto; /* Centra la lista de navegación */
+}
+
+/* Estilos para los enlaces de la lista de navegación */
+.nav-list li a {
+    text-decoration: none;
+    color: #626161;
+    padding: 10px 15px; /* Espaciado interno para simular un botón */
+    border-radius: 5px; /* Bordes redondeados para un efecto de botón */
+    transition: background-color 0.3s, color 0.3s; /* Transición suave para el hover */
+}
+
+/* Efecto de hover para los enlaces de navegación */
+.nav-list li a:hover {
+    background-color: #467BB3; /* Fondo del botón al pasar el ratón */
+    color: #fff; /* Color del texto del botón al pasar el ratón */
+}
+
+/* Estilos para los botones de abrir y cerrar el menú en móviles */
+.abrir-menu,
+.cerrar-menu {
+    display: none; /* Oculta los botones por defecto */
+}
+
+@media screen and (max-width: 800px) {
+    /* Mostrar los botones de menú en dispositivos móviles */
+    .abrir-menu,
+    .cerrar-menu {
+        display: block;
+        border: 0;
+        font-size: 2.5rem;
+        background-color: transparent;
+        cursor: pointer;
+    }
+    
+    /* Mostrar el botón "Agenda tu evento" en móviles */
+    .agenda-evento {
+        display: block;
+        margin: 0 1rem; /* Espacio a los lados del botón */
+        margin-left: auto; /* Empuja el botón a la derecha */
+        margin-right: 0.5rem; /* Ajusta la distancia hacia el botón de menú hamburguesa */
+        margin-top: 1rem;
+    }
+    
+    /* Ajustar el tamaño de fuente y padding del anuncio en dispositivos móviles */
+    .anuncio {
+        font-size: 16px;
+        padding: 15px 15px;
+    }
+
+    /* Estilos para el menú de navegación en dispositivos móviles */
+    .nav {
+        opacity: 0;
+        visibility: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        gap: 1rem;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #1c1c1c;
+        padding: 2rem;
+        box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
+        z-index: 999; /* Asegura que el menú esté sobre otros elementos */
+        transition: opacity 0.3s, visibility 0.3s; /* Transición suave para la visibilidad */
+    }
+
+    /* Mostrar el menú de navegación cuando se active la clase 'visible' */
+    .nav.visible {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    /* Ajustar la lista de navegación en dispositivos móviles */
+    .nav-list {
+        flex-direction: column;
+        align-items: end;
+    }
+
+    /* Ajustar el color de los enlaces en el menú móvil */
+    .nav-list li a {
+        color: #ececec;
+    }
+}
